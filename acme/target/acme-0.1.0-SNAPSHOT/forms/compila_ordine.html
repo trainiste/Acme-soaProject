@@ -1,0 +1,100 @@
+<h2>Compilazione ordine</h2>
+<form name="compila_ordine">
+<h3>Informazioni rivendita</h3>
+  <div class="form-group">
+    <label for="rivendita">Rivendita</label>
+    <input class="form-control"
+           cam-variable-type="String"
+           cam-variable-name="rivendita"
+           name="rivendita" />
+  </div>
+  <div class="form-group">
+      <label for="citta">Città</label>
+  	<select cam-variable-name="citta"
+        cam-variable-type="String">
+  		<option>Milano</option>
+  		<option>Napoli</option>
+  		<option>Roma</option>
+  		<option>Torino</option>
+  		<option>Venezia</option>
+	</select>
+  </div>
+  <hr>
+  <h3>Componenti</h3>
+   <div class="form-group">
+      <label for="modellobase">Modello Base</label>
+  	<select cam-variable-name="modellobase"
+        cam-variable-type="String">
+  		<option>BMX</option>
+  		<option>CityBike</option>
+  		<option>MountainBike</option>
+  		<option>Corsa</option>
+	</select>
+  </div>
+  <div class="form-group">
+      <label for="colorazione">Colorazione</label>
+  	<select cam-variable-name="colorazione"
+        cam-variable-type="String">
+  		<option>Blu</option>
+  		<option>Rosso</option>
+  		<option>Giallo</option>
+  		<option>Verde</option>
+  		<option>Rosa</option>
+	</select>
+  </div>
+  <div class="form-group">
+      <label for="freno">Gruppo frenante</label>
+  	<select cam-variable-name="freno"
+        cam-variable-type="String">
+  		<option>Tamburo</option>
+  		<option>Disco</option>
+	</select>
+  </div>
+  <div class="form-group">
+      <label for="sterzo">Gruppo sterzo</label>
+  	<select cam-variable-name="sterzo"
+        cam-variable-type="String">
+  		<option>Standard</option>
+  		<option>Integrato</option>
+	</select>
+	</div>
+	<div class="form-group">
+  <div class="form-group">
+      <label for="trasmissione">Trasmissione</label>
+  	<select cam-variable-name="trasmissione"
+        cam-variable-type="String">
+  		<option value="ScattoFisso">Scatto Fisso</option>
+  		<option value="SingleSpeed" >Single Speed</option>
+  		<option value="DoppiaCorsa">Doppia da corsa</option>
+  		<option value="DoppiaMountain">Doppia da Mountain</option>
+	</select>
+  </div>
+  <div class="form-group">
+      <label for="ammortizzatori">Ammortizzatori</label>
+  	<select cam-variable-name="ammortizzatori"
+        cam-variable-type="String">
+  		<option>Aria</option>
+  		<option>Molla</option>
+	</select>
+  </div>
+  <hr>
+  <h3>Accessori</h3>
+  <div class="form-group">
+  	<label for="accessorio1">Campanello</label>
+     <input type="checkbox"
+       cam-variable-name="accessorio1"
+       cam-variable-type="Boolean" />
+  </div>
+   <div class="form-group">
+  	<label for="accessorio2">Cestino</label>
+     <input type="checkbox"
+       cam-variable-name="accessorio2"
+       cam-variable-type="Boolean" />
+  </div>
+   <div class="form-group">
+  	<label for="accessorio3">Cavalletto</label>
+     <input type="checkbox"
+       cam-variable-name="accessorio3"
+       cam-variable-type="Boolean" />
+  </div>
+</form>

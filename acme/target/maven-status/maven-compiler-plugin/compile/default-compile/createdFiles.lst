@@ -1,0 +1,12 @@
+org/camunda/bpm/acme/ControlloComponente.class
+org/camunda/bpm/acme/ControlloAccessorio.class
+org/camunda/bpm/acme/VerificaPagamento.class
+org/camunda/bpm/acme/Notifica.class
+org/camunda/bpm/acme/InvioRisposta.class
+org/camunda/bpm/acme/AcmeApplication.class
+org/camunda/bpm/acme/OrdineToOfficina.class
+org/camunda/bpm/acme/InvioPreventivo.class
+org/camunda/bpm/acme/InvioOrdine.class
+org/camunda/bpm/acme/InvioAnticipo.class
+org/camunda/bpm/acme/ContattaFornitore.class
+org/camunda/bpm/acme/CalcoloDistanze.class

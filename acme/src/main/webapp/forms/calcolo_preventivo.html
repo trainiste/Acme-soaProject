@@ -1,0 +1,67 @@
+<form name="calcola_preventivo">
+	<style>
+	table{border_collapse:collapse;}
+	table,th,td{border:1px solid black;}
+	</style>
+	<script cam-script type="text/form-script" >
+	    var variableManager = camForm.variableManager;
+	    camForm.on('form-loaded', function() {
+	      variableManager.fetchVariable('ordine');
+	    });
+	    camForm.on('variables-fetched', function() {
+	      var ordine = variableManager.variableValue('ordine');
+	      console.log("ORDINE" + JSON.stringify(ordine));
+	      var JSONordine = JSON.stringify(eval("(" + ordine + ")"));
+	      var obj= JSON.parse(JSONordine);
+	      document.getElementById("mb").innerHTML= "" + JSON.stringify(obj.componenti.modellobase);
+	      document.getElementById("col").innerHTML= "" + JSON.stringify(obj.componenti.colorazione);
+	      document.getElementById("gf").innerHTML= "" + JSON.stringify(obj.componenti.freno);
+	      document.getElementById("gs").innerHTML= "" + JSON.stringify(obj.componenti.sterzo);
+	      document.getElementById("amm").innerHTML= "" + JSON.stringify(obj.componenti.ammortizzatori);
+	      document.getElementById("tra").innerHTML= "" + JSON.stringify(obj.componenti.trasmissione);
+	      document.getElementById("acc1").innerHTML= "" + JSON.stringify(obj.accessori.accessorio1);
+	      document.getElementById("acc2").innerHTML= "" + JSON.stringify(obj.accessori.accessorio2);
+	      document.getElementById("acc3").innerHTML= "" + JSON.stringify(obj.accessori.accessorio3);
+	          });
+	  </script>
+  <div class="form-group">
+  <h2>Componenti</h2>
+  <table >
+  	<tr><th>Tipo</th><th>Valore</th></tr>
+  	<tr><td>Modello base</td><td id="mb"></td></tr>
+   	<tr><td>Colorazione</td><td id="col"></td></tr>
+   	<tr><td>Gruppo Frenante</td><td id="gf"></td></tr>
+   	<tr><td>Gruppo Sterzo</td><td id="gs"></td></tr>
+   	<tr><td>Ammortizzatori</td><td id="amm"></td></tr>
+   	<tr><td>Trasmissione</td><td id="tra"></td></tr>
+  </table>
+  <br>
+  <hr>
+  <br>
+   <h2>Accessori</h2>
+  <table>
+  	<tr><th>Tipo</th><th>Valore</th></tr>
+  	<tr><td>Accessorio 1</td><td id="acc1"></td></tr>
+   	<tr><td>Accessorio 2</td><td id="acc2"></td></tr>
+   	<tr><td>Accessorio 3</td><td id="acc3"></td></tr>
+  </table>
+  <br>
+  <hr>
+  <br>
+  	<div class="form-group">
+    <label for="prezzo">Prezzo</label>
+    <input class="form-control"
+           cam-variable-type="Double"
+           cam-variable-name="prezzo"
+           name="prezzo" />
+  	</div>
+  <br>
+      <label for="sconto">% Sconto</label>
+  	<select cam-variable-name="sconto"
+        cam-variable-type="Double">
+        <option>0</option>
+  		<option>10</option>
+  		<option>20</option>
+  	</select>
+  </div>
+</form>

@@ -1,0 +1,29 @@
+<form name="valuta_anticipo">
+	<script cam-script type="text/form-script" >
+    	var variableManager = camForm.variableManager;
+    	camForm.on('form-loaded', function() {
+     	 	variableManager.fetchVariable('ordine');
+    	});
+	     camForm.on('variables-fetched', function() {
+		      var ordine = variableManager.variableValue('ordine');
+		      console.log("ORDINE" + JSON.stringify(ordine));
+		      var JSONordine = JSON.stringify(eval("(" + ordine + ")"));
+		      var obj= JSON.parse(JSONordine);
+		      document.getElementById("prezzo").innerHTML="Il prezzo dell'ordine e' " + JSON.stringify(obj.prezzo) + " euro.";
+	     });
+  	</script>
+  	<div id="prezzo" style="font-size: 24px;" ></div>
+	<br>
+  	<div class="form-group">
+ 	 	<div id="preventivo" style="font-size: 24px;" >
+ 	</div>
+	<br>
+      <label for="qta_anticipo">Quanto anticipo vuoi versare?(in percentuale)</label>
+      <br>
+  	<select cam-variable-name="qta_anticipo"
+        cam-variable-type="Double">
+  		<option>10</option>
+  		<option>20</option>
+  	</select>
+  </div>
+</form>

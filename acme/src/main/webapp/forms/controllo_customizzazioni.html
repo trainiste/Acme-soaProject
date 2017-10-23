@@ -1,0 +1,46 @@
+<form name="controllo_customizzazioni">
+<style>
+table{border_collapse:collapse;}
+table,th,td{border:1px solid black;}
+</style>
+	<script cam-script type="text/form-script" >
+	    var variableManager = camForm.variableManager;
+	    camForm.on('form-loaded', function() {
+	      variableManager.fetchVariable('ordine');
+	    });
+	    camForm.on('variables-fetched', function() {
+	      var ordine = variableManager.variableValue('ordine');
+	      console.log("ORDINE" + JSON.stringify(ordine));
+	      var JSONordine = JSON.stringify(eval("(" + ordine + ")"));
+	      var obj= JSON.parse(JSONordine);
+	      document.getElementById("mb").innerHTML= "" + JSON.stringify(obj.componenti.modellobase);
+	      document.getElementById("col").innerHTML= "" + JSON.stringify(obj.componenti.colorazione);
+	      document.getElementById("gf").innerHTML= "" + JSON.stringify(obj.componenti.freno);
+	      document.getElementById("gs").innerHTML= "" + JSON.stringify(obj.componenti.sterzo);
+	      document.getElementById("amm").innerHTML= "" + JSON.stringify(obj.componenti.ammortizzatori);
+	      document.getElementById("tra").innerHTML= "" + JSON.stringify(obj.componenti.trasmissione);
+	          });
+	  </script>
+  <div class="form-group">
+  <h2>Customizzazioni dell'ordine</h2>
+  <table>
+  	<tr><th>Tipo</th><th>Valore</th></tr>
+  	<tr><td>Modello base</td><td id="mb"></td></tr>
+   	<tr><td>Colorazione</td><td id="col"></td></tr>
+   	<tr><td>Gruppo Frenante</td><td id="gf"></td></tr>
+   	<tr><td>Gruppo Sterzo</td><td id="gs"></td></tr>
+   	<tr><td>Ammortizzatori</td><td id="amm"></td></tr>
+   	<tr><td>Trasmissione</td><td id="tra"></td></tr>
+  </table>
+  <br>
+  <hr>
+  <br>
+    <label for="esito">Le customizzazioni apportate dal cliente sono conformi?</label>
+    <br>
+      <select cam-variable-name="esito"
+        cam-variable-type="Boolean">
+  		<option value="true">Si</option>
+  		<option value="false">No</option>
+		</select>
+  	</div>
+  </form>

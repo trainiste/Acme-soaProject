@@ -1,0 +1,26 @@
+<form name="controllo_preventivo">
+<script cam-script type="text/form-script" >
+    var variableManager = camForm.variableManager;
+    camForm.on('form-loaded', function() {
+      variableManager.fetchVariable('ordine');
+    });
+    camForm.on('variables-fetched', function() {
+      var ordine = variableManager.variableValue('ordine');
+      console.log("ORDINE" + JSON.stringify(ordine));
+      var JSONordine = JSON.stringify(eval("(" + ordine + ")"));
+      var obj= JSON.parse(JSONordine);
+      document.getElementById("prezzo").innerHTML="L'importo del preventivo e' " + JSON.stringify(obj.prezzo) + " euro.";
+          });
+  </script>
+  	<div id="prezzo" style="font-size: 24px;" ></div>
+	<br>
+  	<div class="form-group">
+    <label for="esito">Accetti il preventivo?</label>
+    <br>
+      <select cam-variable-name="esitoprev"
+        cam-variable-type="Boolean">
+  		<option value="true">Si</option>
+  		<option value="false">No</option>
+		</select>
+  	</div>
+  </form>
